@@ -1,0 +1,21 @@
+.ant-btn-background-ghost.ant-btn-primary {
+    color: $primary;
+    border-color: $primary;
+    text-shadow: none;
+}
+
+.ant-btn {
+    border-radius: 50px;
+    font: $text;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ant-btn.ant-btn-background-ghost:focus,
+.ant-btn.ant-btn-background-ghost:hover {
+    color: $primary;
+    border-color: $primary;
+    opacity: 0.8;
+    background-color: rgba(63, 70, 96, 0.2);
+}

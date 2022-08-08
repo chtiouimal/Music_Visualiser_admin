@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Palanquin:wght@100;200;300;400;500;600;700&display=swap');
+
+@import "./variables/colors";
+@import "./variables/fonts";
+
+@import "./pages/pages";
+
+@import "./components/components";
+
+@import "./gloables/typography";
+@import "./gloables/ui-global";
+
+body {
+    background: $dark;
+}
+
+
+// font-family: 'Montserrat',
+// sans-serif;
+// font-family: 'Palanquin',
+// sans-serif;
