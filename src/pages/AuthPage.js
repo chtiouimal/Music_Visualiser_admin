@@ -1,9 +1,7 @@
 import React from "react";
 import { authWallpaper } from "../utils/links.constant";
 import LOGO from "../assets/files/mv_logo.svg";
-import { MvInput } from "../components";
-import { UserOutlined, LockOutlined } from "@ant-design/icons";
-import { Button } from "antd";
+import Auth from "../features/auth";
 
 function AuthPage() {
   return (
@@ -27,17 +25,7 @@ function AuthPage() {
             Make your own gallery, Inspire others with your{" "}
             <span className="mv-text-highlight">Art.</span>
           </p>
-          <form>
-            <MvInput placeholder="Email" prefix={<UserOutlined />} />
-            <MvInput
-              placeholder="Password"
-              type="password"
-              prefix={<LockOutlined />}
-            />
-            <Button type="primary" ghost>
-              Login
-            </Button>
-          </form>
+          <Auth />
         </div>
         <div
           style={{

@@ -3,6 +3,13 @@
     font: $small-text;
 }
 
+.mv-small-text-out {
+    color: $primary;
+    font: $small-text-out;
+    opacity: 0.6;
+    text-transform: uppercase;
+}
+
 .mv-big-title {
     color: $light;
     font: $title;

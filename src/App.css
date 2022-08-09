@@ -86,9 +86,102 @@ select:-webkit-autofill:focus {
   transition: background-color 5000s ease-in-out 0s;
 }
 
+.trigger {
+  font-size: 18px;
+  line-height: 64px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.trigger:hover {
+  color: #598EF7;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #F7F9FF;
+  height: 64px;
+  margin-bottom: 24px;
+}
+.logo .navigation {
+  display: flex;
+  gap: 8px;
+}
+
+.site-layout .site-layout-background {
+  background: transparent;
+}
+
+.ant-layout.ant-layout-has-sider {
+  height: 100vh;
+}
+
+.ant-layout {
+  background: #2E303A;
+}
+
+.ant-layout-sider {
+  flex: 0 0 320px !important;
+  max-width: 320px !important;
+  min-width: 320px !important;
+  width: 320px !important;
+  padding: 0px 32px;
+  background: #2E303A;
+}
+.ant-layout-sider .ant-menu {
+  background: transparent;
+}
+.ant-layout-sider .ant-menu .ant-menu-item {
+  border-radius: 10px;
+  padding: 0px !important;
+  color: #F7F9FF;
+}
+.ant-layout-sider .ant-menu .ant-menu-item:hover {
+  color: #598EF7;
+  opacity: 0.6;
+}
+.ant-layout-sider .ant-menu .ant-menu-item-selected {
+  background-color: transparent !important;
+}
+
+#mv-right-sider {
+  display: block;
+  border-left: 1px solid rgba(207, 209, 222, 0.4);
+}
+
+#mv-left-sider {
+  display: block;
+  border-right: 1px solid rgba(207, 209, 222, 0.4);
+}
+
+.ant-menu-dark .ant-menu-item-selected .ant-menu-item-icon,
+.ant-menu-dark .ant-menu-item-selected .ant-menu-item-icon + span,
+.ant-menu-dark .ant-menu-item-selected .anticon,
+.ant-menu-dark .ant-menu-item-selected .anticon + span,
+.ant-menu-dark .ant-menu-item-selected > a,
+.ant-menu-dark .ant-menu-item-selected > a:hover,
+.ant-menu-dark .ant-menu-item-selected > span > a,
+.ant-menu-dark .ant-menu-item-selected > span > a:hover {
+  color: #598EF7;
+}
+
+@media (max-width: 1400px) {
+  #mv-right-sider {
+    display: none !important;
+  }
+}
 .mv-small-text {
   color: #F7F9FF;
   font: 400 14px "Palanquin", sans-serif;
+}
+
+.mv-small-text-out {
+  color: #598EF7;
+  font: 600 12px "Montserrat", sans-serif;
+  opacity: 0.6;
+  text-transform: uppercase;
 }
 
 .mv-big-title {
