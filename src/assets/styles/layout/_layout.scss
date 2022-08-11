@@ -1,8 +1,10 @@
 .trigger {
-    font-size: 18px;
+    display: none;
+    font-size: 20px;
     line-height: 64px;
     cursor: pointer;
     transition: color 0.3s;
+    color: $light;
 }
 .trigger:hover {
     color: $primary;
@@ -18,10 +20,12 @@
     left: 0;
     width: 100%;
     padding: 0px 32px;
-    .navigation {
-        display: flex;
-        gap: 8px;
-    }
+}
+
+.navigation {
+    display: flex;
+    gap: 8px;
+    color: $light;
 }
 
 .site-layout .site-layout-background {
@@ -31,6 +35,12 @@
 .ant-layout.ant-layout-has-sider {
     height: 100vh;
     overflow: hidden;
+}
+
+.mv-layout-header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }
 
 .ant-layout {
@@ -44,23 +54,28 @@
     width: 320px !important;
     padding: 0px 32px;
     background: $dark;
-    .ant-menu {
-        background: transparent;
-        .ant-menu-item {
-            border-radius: 10px;
-            padding: 0px !important;
-            color: $light;
-            &:hover  {
+}
+
+.ant-menu {
+    background: transparent;
+
+    .ant-menu-item {
+        border-radius: 10px;
+        padding: 0px !important;
+        color: $light;
+
+        &:hover {
+            color: $primary;
+            opacity: 0.6;
+
+            .ant-menu-title-content a {
                 color: $primary;
-                opacity: 0.6;
-                .ant-menu-title-content a {
-                    color: $primary;
-                }
             }
         }
-        .ant-menu-item-selected {
-            background-color: transparent !important;
-        }
+    }
+
+    .ant-menu-item-selected {
+        background-color: transparent !important;
     }
 }
 
@@ -112,8 +127,8 @@
     height: 80px;
     padding: 0px 32px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    gap: 16px;
 }
 
 .site-layout {
@@ -129,8 +144,38 @@
     text-transform: uppercase;
 }
 
+.mv-layout-header-right {
+    display: none;
+}
+
+#menu-search-bar {
+    display: block;
+}
+
 @media (max-width: 1400px) {
-    #mv-right-sider  {
+    #mv-right-sider {
         display: none !important;
+    }
+    .ant-layout-content {
+        margin-top: 80px !important;
+    }
+    .mv-layout-header-right {
+        display: flex !important;
+        right: 0 !important;
+        left: unset !important;
+        width: auto !important;
+        gap: 16px;
+    }
+}
+
+@media (max-width: 860px) {
+    #mv-left-sider {
+        display: none !important;
+    }
+    #menu-search-bar {
+        display: none !important;
+    }
+    .trigger {
+        display: flex !important;
     }
 }

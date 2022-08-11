@@ -64,6 +64,13 @@
     display: none !important;
   }
 }
+@media (max-width: 1400px) {
+  .mv-page-layout .mv-page-cta {
+    position: absolute;
+    top: 80px;
+    right: 32px;
+  }
+}
 .ant-input-affix-wrapper {
   border-radius: 50px;
   color: rgba(207, 209, 222, 0.2);
@@ -299,11 +306,43 @@ select:-webkit-autofill:focus {
   height: 50%;
 }
 
+.ant-drawer-content {
+  background: #2E303A;
+}
+.ant-drawer-content .ant-menu {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 32px;
+}
+.ant-drawer-content .ant-menu:after,
+.ant-drawer-content .ant-menu:before {
+  display: none;
+  content: "";
+}
+
+.ant-drawer-header {
+  min-height: 80px;
+  border-color: rgba(207, 209, 222, 0.4);
+}
+.ant-drawer-header .ant-drawer-close {
+  color: #F7F9FF;
+}
+
+.ant-menu-dark .ant-menu-sub,
+.ant-menu.ant-menu-dark,
+.ant-menu.ant-menu-dark .ant-menu-sub {
+  background: transparent;
+}
+
 .trigger {
-  font-size: 18px;
+  display: none;
+  font-size: 20px;
   line-height: 64px;
   cursor: pointer;
   transition: color 0.3s;
+  color: #F7F9FF;
 }
 
 .trigger:hover {
@@ -322,9 +361,11 @@ select:-webkit-autofill:focus {
   width: 100%;
   padding: 0px 32px;
 }
-.logo .navigation {
+
+.navigation {
   display: flex;
   gap: 8px;
+  color: #F7F9FF;
 }
 
 .site-layout .site-layout-background {
@@ -334,6 +375,12 @@ select:-webkit-autofill:focus {
 .ant-layout.ant-layout-has-sider {
   height: 100vh;
   overflow: hidden;
+}
+
+.mv-layout-header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .ant-layout {
@@ -348,22 +395,23 @@ select:-webkit-autofill:focus {
   padding: 0px 32px;
   background: #2E303A;
 }
-.ant-layout-sider .ant-menu {
+
+.ant-menu {
   background: transparent;
 }
-.ant-layout-sider .ant-menu .ant-menu-item {
+.ant-menu .ant-menu-item {
   border-radius: 10px;
   padding: 0px !important;
   color: #F7F9FF;
 }
-.ant-layout-sider .ant-menu .ant-menu-item:hover {
+.ant-menu .ant-menu-item:hover {
   color: #598EF7;
   opacity: 0.6;
 }
-.ant-layout-sider .ant-menu .ant-menu-item:hover .ant-menu-title-content a {
+.ant-menu .ant-menu-item:hover .ant-menu-title-content a {
   color: #598EF7;
 }
-.ant-layout-sider .ant-menu .ant-menu-item-selected {
+.ant-menu .ant-menu-item-selected {
   background-color: transparent !important;
 }
 
@@ -414,8 +462,8 @@ select:-webkit-autofill:focus {
   height: 80px;
   padding: 0px 32px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  gap: 16px;
 }
 
 .site-layout {
@@ -431,9 +479,38 @@ select:-webkit-autofill:focus {
   text-transform: uppercase;
 }
 
+.mv-layout-header-right {
+  display: none;
+}
+
+#menu-search-bar {
+  display: block;
+}
+
 @media (max-width: 1400px) {
   #mv-right-sider {
     display: none !important;
+  }
+  .ant-layout-content {
+    margin-top: 80px !important;
+  }
+  .mv-layout-header-right {
+    display: flex !important;
+    right: 0 !important;
+    left: unset !important;
+    width: auto !important;
+    gap: 16px;
+  }
+}
+@media (max-width: 860px) {
+  #mv-left-sider {
+    display: none !important;
+  }
+  #menu-search-bar {
+    display: none !important;
+  }
+  .trigger {
+    display: flex !important;
   }
 }
 .mv-small-text {

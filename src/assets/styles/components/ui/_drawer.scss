@@ -1,0 +1,29 @@
+.ant-drawer-content {
+    background: $dark;
+    .ant-menu {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 32px;
+    }
+    .ant-menu:after,
+        .ant-menu:before {
+            display: none;
+            content: "";
+        }
+}
+
+.ant-drawer-header {
+    min-height: 80px;
+    border-color: rgba(207, 209, 222, 0.4);
+    .ant-drawer-close {
+        color: $light;
+    }
+}
+
+.ant-menu-dark .ant-menu-sub,
+.ant-menu.ant-menu-dark,
+.ant-menu.ant-menu-dark .ant-menu-sub {
+    background: transparent;
+}

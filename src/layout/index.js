@@ -8,18 +8,25 @@ import { Avatar, Layout, Menu } from "antd";
 import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
 import LOGO from "../assets/files/mv_logo.svg";
-import { MvInput, MvSongCard } from "../components";
+import { MvDrawer, MvInput, MvSongCard } from "../components";
 import MvPlayer from "../features/player";
 import { mainNav, optionNav } from "../utils/route.constant";
 const { Header, Sider, Content } = Layout;
 
 function MvLayout() {
+  const [collapsed, setCollapsed] = useState(false);
   const img =
     "https://firebasestorage.googleapis.com/v0/b/music-gallery-da2d1.appspot.com/o/Collections%2FCollection%203%2F04%2F10.png?alt=media&token=786a23ae-45e7-4e69-b82c-93c467142c18";
 
   return (
     <Layout>
-      <Sider trigger={null} id="mv-left-sider">
+      <Sider
+        id="mv-left-sider"
+        trigger={null}
+        collapsible
+        collapsed={collapsed}
+        collapsedWidth="0"
+      >
         <div className="logo">
           <img src={LOGO} alt="mv_logo" />
           <div className="navigation">
@@ -44,11 +51,36 @@ function MvLayout() {
       </Sider>
       <Layout className="site-layout">
         <Header className="site-layout-background">
-          <MvInput
-            placeholder="Search..."
-            style={{ maxWidth: 300 }}
-            prefix={<SearchOutlined />}
-          />
+          <div className="mv-layout-header-left">
+            <MvDrawer />
+            <div id="menu-search-bar">
+              <MvInput
+                placeholder="Search..."
+                style={{ maxWidth: 300 }}
+                prefix={<SearchOutlined />}
+              />
+            </div>
+          </div>
+          <div className="logo mv-layout-header-right">
+            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+              <Avatar
+                size={40}
+                src="https://xsgames.co/randomusers/avatar.php?g=female"
+              />
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <span className="mv-text" style={{ lineHeight: 1.2 }}>
+                  username
+                </span>
+                <span
+                  className="mv-extra-small-text-out"
+                  style={{ lineHeight: 1.2 }}
+                >
+                  Producer
+                </span>
+              </div>
+            </div>
+            <BellOutlined style={{ fontSize: 20 }} />
+          </div>
         </Header>
         <Content
           className="site-layout-background"
