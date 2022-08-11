@@ -38,6 +38,22 @@
     }
 }
 
+.mv-page-layout  {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    overflow: auto;
+    .mv-page-cta  {
+        position: absolute;
+        top: 0;
+        right: 32px;
+        height: 80px;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+    }
+}
+
 @media (max-width: 700px) {
     .mv-auth-layout {
         .mv-auth-left {

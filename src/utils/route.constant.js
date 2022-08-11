@@ -1,4 +1,10 @@
-import { CollectionsPage, DashboardPage, SongsPage } from "../pages";
+import {
+  CollectionsPage,
+  DashboardPage,
+  PreviewPage,
+  SettingsPage,
+  SongsPage,
+} from "../pages";
 import {
   PieChartOutlined,
   ApartmentOutlined,
@@ -6,6 +12,7 @@ import {
   SettingOutlined,
   EyeOutlined,
 } from "@ant-design/icons";
+import { Link } from "react-router-dom";
 
 export const mainNav = [
   {
@@ -13,7 +20,7 @@ export const mainNav = [
     path: "dashboard",
     element: <DashboardPage />,
     routes: [],
-    label: "Dashboard",
+    label: <Link to="dashboard">Dashboard</Link>,
     key: "1",
     icon: <PieChartOutlined />,
   },
@@ -22,7 +29,7 @@ export const mainNav = [
     path: "songs",
     element: <SongsPage />,
     routes: [],
-    label: "Songs",
+    label: <Link to="songs">Songs</Link>,
     key: "2",
     icon: <CustomerServiceOutlined />,
   },
@@ -31,29 +38,98 @@ export const mainNav = [
     path: "collections",
     element: <CollectionsPage />,
     routes: [":id"],
-    label: "Collections",
+    label: <Link to="collections">Collections</Link>,
     key: "3",
     icon: <ApartmentOutlined />,
+  },
+  {
+    id: 6,
+    path: "preview",
+    element: <PreviewPage />,
+    routes: [],
+    label: <Link to="preview">Preview</Link>,
+    key: "4",
+    icon: <EyeOutlined />,
+  },
+  {
+    id: 7,
+    path: "settings",
+    element: <SettingsPage />,
+    routes: [],
+    label: <Link to="settings">Settings</Link>,
+    key: "5",
+    icon: <SettingOutlined />,
   },
 ];
 
 export const optionNav = [
   {
-    id: 4,
-    path: "dashboard",
-    element: <DashboardPage />,
+    id: 1,
+    path: null,
+    element: null,
     routes: [],
-    label: "Preview",
-    key: "4",
-    icon: <EyeOutlined />,
+    label: "Menu",
+    key: "g1",
+    icon: null,
+    type: "group",
+    children: [
+      {
+        id: 2,
+        path: "dashboard",
+        element: <DashboardPage />,
+        routes: [],
+        label: <Link to="dashboard">Dashboard</Link>,
+        key: "1",
+        icon: <PieChartOutlined />,
+      },
+      {
+        id: 3,
+        path: "songs",
+        element: <SongsPage />,
+        routes: [],
+        label: <Link to="songs">Songs</Link>,
+        key: "2",
+        icon: <CustomerServiceOutlined />,
+      },
+      {
+        id: 4,
+        path: "collections",
+        element: <CollectionsPage />,
+        routes: [":id"],
+        label: <Link to="collections">Collections</Link>,
+        key: "3",
+        icon: <ApartmentOutlined />,
+      },
+    ],
   },
   {
     id: 5,
-    path: "songs",
-    element: <SongsPage />,
+    path: null,
+    element: null,
     routes: [],
-    label: "Settings",
-    key: "5",
-    icon: <SettingOutlined />,
+    label: "Other",
+    key: "g2",
+    icon: null,
+    type: "group",
+    children: [
+      {
+        id: 6,
+        path: "preview",
+        element: <PreviewPage />,
+        routes: [],
+        label: <Link to="preview">Preview</Link>,
+        key: "4",
+        icon: <EyeOutlined />,
+      },
+      {
+        id: 7,
+        path: "settings",
+        element: <SettingsPage />,
+        routes: [],
+        label: <Link to="settings">Settings</Link>,
+        key: "5",
+        icon: <SettingOutlined />,
+      },
+    ],
   },
 ];

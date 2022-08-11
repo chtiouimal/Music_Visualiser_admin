@@ -1,0 +1,16 @@
+.mv-grid-display {
+    display: flex;
+    gap: 16px;
+    overflow: auto;
+    align-items: center;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    .mv-song-card {
+        height: 200px;
+        width: 150px;
+        min-width: 150px;
+    }
+}

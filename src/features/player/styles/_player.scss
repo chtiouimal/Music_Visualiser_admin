@@ -1,0 +1,8 @@
+@import "./components/music-player";
+@import "./components/music-library";
+
+.mv-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

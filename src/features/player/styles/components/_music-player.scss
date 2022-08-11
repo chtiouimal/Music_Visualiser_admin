@@ -1,0 +1,38 @@
+.mv-music-player  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    .mv-song {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+        .mv-song-name {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            h4 {
+                font: $big-text;
+            }
+            span {
+                font: $text;
+                opacity: 0.4;
+            }
+            h4, span {
+                text-align: center;
+                margin: 0;
+                color: $light;
+            }
+        }
+    }
+    .mv-controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        .anticon {
+            color: $primary;
+        }
+    }
+}

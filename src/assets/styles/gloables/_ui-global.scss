@@ -10,6 +10,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    span:last-child {
+        margin-bottom: 4px;
+    }
 }
 
 .ant-btn.ant-btn-background-ghost:focus,
@@ -18,4 +21,8 @@
     border-color: $primary;
     opacity: 0.8;
     background-color: rgba(63, 70, 96, 0.2);
+}
+
+.ant-divider {
+    border-color: rgba(207, 209, 222, 0.4);
 }

@@ -8,12 +8,16 @@
     color: $primary;
 }
 .logo {
+    position: absolute;
+    top: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
     color: $light;
-    height: 64px;
-    margin-bottom: 24px;
+    height: 80px;
+    left: 0;
+    width: 100%;
+    padding: 0px 32px;
     .navigation {
         display: flex;
         gap: 8px;
@@ -26,6 +30,7 @@
 
 .ant-layout.ant-layout-has-sider {
     height: 100vh;
+    overflow: hidden;
 }
 
 .ant-layout {
@@ -48,6 +53,9 @@
             &:hover  {
                 color: $primary;
                 opacity: 0.6;
+                .ant-menu-title-content a {
+                    color: $primary;
+                }
             }
         }
         .ant-menu-item-selected {
@@ -59,12 +67,35 @@
 #mv-right-sider {
     display: block;
     border-left: 1px solid rgba(207, 209, 222, 0.4);
+    .ant-layout-sider-children {
+        padding-top: 104px;
+    }
+    .logo {
+        border-bottom: 1px solid rgba(207, 209, 222, 0.4);
+    }
 }
 
 #mv-left-sider {
     display: block;
     border-right: 1px solid rgba(207, 209, 222, 0.4);
+    .ant-layout-sider-children  {
+        padding-top: 104px;
+        padding-bottom: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 }
+
+#mv-left-sider, #mv-right-sider {
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
 
 .ant-menu-dark .ant-menu-item-selected .ant-menu-item-icon,
 .ant-menu-dark .ant-menu-item-selected .ant-menu-item-icon+span,
@@ -75,6 +106,27 @@
 .ant-menu-dark .ant-menu-item-selected>span>a,
 .ant-menu-dark .ant-menu-item-selected>span>a:hover {
     color: $primary;
+}
+
+.ant-layout-header {
+    height: 80px;
+    padding: 0px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.site-layout {
+    overflow: auto;
+    position: relative;
+}
+
+.ant-menu-item-group-title {
+    padding-left: 0;
+    color: $shade3 !important;
+    font: $small-text-out;
+    opacity: 0.6;
+    text-transform: uppercase;
 }
 
 @media (max-width: 1400px) {

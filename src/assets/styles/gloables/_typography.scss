@@ -4,8 +4,15 @@
 }
 
 .mv-small-text-out {
-    color: $primary;
+    color: $shade3;
     font: $small-text-out;
+    opacity: 0.6;
+    text-transform: uppercase;
+}
+
+.mv-extra-small-text-out {
+    color: $primary;
+    font: $extra-small-text-out;
     opacity: 0.6;
     text-transform: uppercase;
 }
@@ -25,7 +32,26 @@
     color: $primary;
     font-weight: 600;
 }
-
-h1,h2,h3,h4,h5,h6,p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
     margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-transform: uppercase;
+}
+
+.mv-small-title {
+    font: $small-title;
+    color: $light;
 }

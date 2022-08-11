@@ -9,7 +9,7 @@ function AuthPage() {
       <div className="mv-auth-left">
         <div
           style={{
-            height: 100,
+            height: 64,
             width: "100%",
             padding: "0px 32px",
             display: "flex",

@@ -1,19 +1,22 @@
 import {
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
   RightOutlined,
   LeftOutlined,
+  SearchOutlined,
+  BellOutlined,
 } from "@ant-design/icons";
-import { Layout, Menu } from "antd";
+import { Avatar, Layout, Menu } from "antd";
 import React, { useState } from "react";
+import { Outlet } from "react-router-dom";
 import LOGO from "../assets/files/mv_logo.svg";
+import { MvInput, MvSongCard } from "../components";
+import MvPlayer from "../features/player";
 import { mainNav, optionNav } from "../utils/route.constant";
 const { Header, Sider, Content } = Layout;
 
 function MvLayout() {
+  const img =
+    "https://firebasestorage.googleapis.com/v0/b/music-gallery-da2d1.appspot.com/o/Collections%2FCollection%203%2F04%2F10.png?alt=media&token=786a23ae-45e7-4e69-b82c-93c467142c18";
+
   return (
     <Layout>
       <Sider trigger={null} id="mv-left-sider">
@@ -25,42 +28,62 @@ function MvLayout() {
           </div>
         </div>
         <div>
-          <span className="mv-small-text-out" style={{ marginTop: 24 }}>
-            Menu
-          </span>
-          <Menu
-            theme="dark"
-            mode="inline"
-            defaultSelectedKeys={["1"]}
-            items={mainNav}
-          />
+          <div style={{ marginBottom: 24 }}>
+            <Menu theme="dark" mode="inline" items={optionNav} />
+          </div>
         </div>
-        <div style={{ marginTop: 24 }}>
-          <span className="mv-small-text-out" style={{ marginTop: 24 }}>
-            Other
-          </span>
-          <Menu theme="dark" mode="inline" items={optionNav} />
+        <div
+          style={{
+            width: "100%",
+            height: "auto",
+            alignSelf: "baseline",
+          }}
+        >
+          <MvSongCard ele={img} />
         </div>
       </Sider>
       <Layout className="site-layout">
-        <Header
-          className="site-layout-background"
-          style={{
-            padding: 0,
-          }}
-        ></Header>
+        <Header className="site-layout-background">
+          <MvInput
+            placeholder="Search..."
+            style={{ maxWidth: 300 }}
+            prefix={<SearchOutlined />}
+          />
+        </Header>
         <Content
           className="site-layout-background"
           style={{
             margin: "24px 16px",
-            padding: 24,
+            padding: "0px 24px",
             minHeight: 280,
           }}
         >
-          Content
+          <Outlet />
         </Content>
       </Layout>
-      <Sider id="mv-right-sider"></Sider>
+      <Sider id="mv-right-sider">
+        <div className="logo">
+          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+            <Avatar
+              size={40}
+              src="https://xsgames.co/randomusers/avatar.php?g=female"
+            />
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <span className="mv-text" style={{ lineHeight: 1.2 }}>
+                username
+              </span>
+              <span
+                className="mv-extra-small-text-out"
+                style={{ lineHeight: 1.2 }}
+              >
+                Producer
+              </span>
+            </div>
+          </div>
+          <BellOutlined style={{ fontSize: 20 }} />
+        </div>
+        <MvPlayer />
+      </Sider>
     </Layout>
   );
 }

@@ -1,0 +1,96 @@
+.ant-table, .ant-table-thead>tr>th {
+    background: transparent;
+}
+
+.ant-pagination-next .ant-pagination-item-link,
+.ant-pagination-prev .ant-pagination-item-link {
+    background-color: transparent;
+    border-color: rgba(207, 209, 222, 0.4);
+    color: $light;
+}
+
+.ant-pagination-item-active {
+    background-color: transparent;
+    border-color: $primary;
+    opacity: 0.6;
+}
+
+.ant-pagination-disabled .ant-pagination-item-link,
+.ant-pagination-disabled:hover .ant-pagination-item-link {
+    color: $light;
+    opacity: 0.2;
+    cursor: not-allowed;
+}
+
+.ant-pagination-item-active:focus-visible,
+.ant-pagination-item-active:hover {
+    border-color:$primary;
+    opacity: 1;
+}
+
+.ant-table-thead>tr>th  {
+    border: none;
+    color:$light;
+    opacity: 0.4;
+    text-transform: uppercase;
+    font: $small-text;
+    padding: 0 0 0 16px;
+}
+
+.ant-table-tbody>tr>td {
+    border: none;
+    color: $light;
+    font: $small-text;
+    &::before {
+        position: absolute;
+        margin-left: -16px;
+        bottom: -10px;
+        z-index: 2;
+        width: 100%;
+        transition: box-shadow .3s;
+        content: "";
+        pointer-events: none;
+        border: 0.5px solid;
+        border-color: rgba(207, 209, 222, 0.4)
+    }
+    &:first-child {
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+    }
+    &:last-child {
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+    }
+}
+
+
+
+.ant-table table {
+    border-spacing: 0 20px;
+}
+
+
+.ant-table-thead>tr>th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan]):before {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 0px;
+    height: 1.6em;
+    background-color: rgba(0, 0, 0, .06);
+    transform: translateY(-50%);
+    transition: background-color .3s;
+    content: "";
+}
+
+.ant-table-tbody>tr.ant-table-row:hover>td,
+.ant-table-tbody>tr>td.ant-table-cell-row-hover {
+    background: transparent;
+    background: $secondary;
+}
+
+.ant-table-tbody>tr>td,
+.ant-table-thead>tr>th,
+.ant-table tfoot>tr>td,
+.ant-table tfoot>tr>th {
+    padding: 8px 16px;
+}
