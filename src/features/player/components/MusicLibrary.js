@@ -2,8 +2,15 @@ import { Avatar, Divider, List, Skeleton } from "antd";
 import React, { useEffect, useState } from "react";
 import { PlayCircleOutlined } from "@ant-design/icons";
 import InfiniteScroll from "react-infinite-scroll-component";
+import TrackCard from "./TrackCard";
 
-function MusicLibrary() {
+function MusicLibrary({
+  music,
+  setCurrentmusic,
+  setIsplaying,
+  setMusic,
+  librarystatus,
+}) {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
 
@@ -13,22 +20,27 @@ function MusicLibrary() {
     }
 
     setLoading(true);
-    fetch(
-      "https://randomuser.me/api/?results=10&inc=name,gender,email,nat,picture&noinfo",
-    )
-      .then((res) => res.json())
-      .then((body) => {
-        setData([...data, ...body.results]);
-        setLoading(false);
-      })
-      .catch(() => {
-        setLoading(false);
-      });
+    setData(music);
+    // fetch(
+    //   "https://randomuser.me/api/?results=10&inc=name,gender,email,nat,picture&noinfo",
+    // )
+    //   .then((res) => res.json())
+    //   .then((body) => {
+    //     setData([...data, ...body.results]);
+    //     setLoading(false);
+    //   })
+    //   .catch(() => {
+    //     setLoading(false);
+    //   });
   };
 
   useEffect(() => {
     loadMoreData();
+    return () => {
+      setLoading(false);
+    };
   }, []);
+
   return (
     <div
       id="scrollableDiv"
@@ -42,29 +54,29 @@ function MusicLibrary() {
         dataLength={data.length}
         next={loadMoreData}
         hasMore={data.length < 50}
-        loader={
-          <Skeleton
-            avatar
-            paragraph={{
-              rows: 1,
-            }}
-            active
-          />
-        }
+        // loader={
+        //   <Skeleton
+        //     avatar
+        //     paragraph={{
+        //       rows: 1,
+        //     }}
+        //     active
+        //   />
+        // }
         endMessage={<Divider plain>It is all, nothing more 🤐</Divider>}
         scrollableTarget="scrollableDiv"
       >
         <List
-          dataSource={data}
-          renderItem={(item) => (
-            <List.Item key={item.email}>
-              <List.Item.Meta
-                avatar={<Avatar src={item.picture.large} />}
-                title={<a href="https://ant.design">{item.name.last}</a>}
-                // description={item.email}
-              />
-              <PlayCircleOutlined style={{ color: "#F7F9FF" }} />
-            </List.Item>
+          dataSource={music}
+          renderItem={(track) => (
+            <TrackCard
+              key={music._id}
+              setCurrentmusic={setCurrentmusic}
+              track={track}
+              music={music}
+              setMusic={setMusic}
+              setIsplaying={setIsplaying}
+            />
           )}
         />
       </InfiniteScroll>

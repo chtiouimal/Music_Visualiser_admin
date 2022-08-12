@@ -66,6 +66,7 @@ function MvLayout() {
               <Avatar
                 size={40}
                 src="https://xsgames.co/randomusers/avatar.php?g=female"
+                className="mv-user-profile"
               />
               <div style={{ display: "flex", flexDirection: "column" }}>
                 <span className="mv-text" style={{ lineHeight: 1.2 }}>
@@ -99,6 +100,7 @@ function MvLayout() {
             <Avatar
               size={40}
               src="https://xsgames.co/randomusers/avatar.php?g=female"
+              className="mv-user-profile"
             />
             <div style={{ display: "flex", flexDirection: "column" }}>
               <span className="mv-text" style={{ lineHeight: 1.2 }}>

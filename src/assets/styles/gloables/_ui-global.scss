@@ -26,3 +26,12 @@
 .ant-divider {
     border-color: rgba(207, 209, 222, 0.4);
 }
+
+.ant-avatar {
+    border: 1px solid rgba(207, 209, 222, 0.4);
+    transition: 0.3s;
+    &:hover {
+        border: 2px solid $primary;
+        background-color: rgba(63, 70, 96, 0.1);
+    }
+}

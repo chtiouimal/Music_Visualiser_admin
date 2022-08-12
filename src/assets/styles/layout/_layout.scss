@@ -19,7 +19,7 @@
     height: 80px;
     left: 0;
     width: 100%;
-    padding: 0px 32px;
+    padding: 0px 32px;border-bottom: 1px solid rgba(207, 209, 222, 0.4);
 }
 
 .navigation {
@@ -85,9 +85,6 @@
     .ant-layout-sider-children {
         padding-top: 104px;
     }
-    .logo {
-        border-bottom: 1px solid rgba(207, 209, 222, 0.4);
-    }
 }
 
 #mv-left-sider {
@@ -150,6 +147,10 @@
 
 #menu-search-bar {
     display: block;
+}
+
+.mv-user-profile {
+    border: 2px solid $primary !important;
 }
 
 @media (max-width: 1400px) {

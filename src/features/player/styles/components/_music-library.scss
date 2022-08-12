@@ -1,9 +1,36 @@
 .ant-list-split .ant-list-item {
     border-bottom: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    margin-bottom: 4px;
+    .anticon {
+        color: $light
+    }
+    &:hover {
+        background-color: $secondary;
+        border-radius: 50px;
+        .ant-avatar {
+            border: 2px solid $primary;
+        }
+    }
 }
 
-.ant-list-item-meta-title a {
+.ant-list-item-meta-title {
     color: $light;
     font: $small-text;
     text-transform: capitalize;
+}
+
+.mv-selected-music {
+    background-color: $secondary;
+    border-radius: 50px;
+    .ant-avatar {
+        border: 2px solid $primary;
+    }
+    .anticon {
+        color: $primary !important;
+    }
+    .ant-list-item-meta-title {
+        color: $primary !important;
+    }
 }
