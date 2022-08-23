@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
+import { PlayerContext } from "../../context/PlayerContext";
 
 function MvSongCard({ ele }) {
-  const img =
-    "https://firebasestorage.googleapis.com/v0/b/music-gallery-da2d1.appspot.com/o/Collections%2FCollection%203%2F02%2F12.png?alt=media&token=b3276df6-3280-4b1e-bb65-24f91b281822";
+  const { dataContext, setDataContext } = useContext(PlayerContext);
 
   return (
-    <div className="mv-song-card">
-      <img src={ele} alt="song_cover" />
+    <div
+      className="mv-song-card"
+      onClick={() => setDataContext([{ ...ele, active: false }])}
+    >
+      <img src={ele.coverArt} alt="song_cover" />
       <div className="mv-song-card-details">
-        <h4 className="mv-small-title">i don't need you</h4>
-        <span className="mv-small-text">Delta X</span>
+        <h4 className="mv-small-title">{ele.songName}</h4>
+        <span className="mv-small-text">{ele.songArtist}</span>
       </div>
     </div>
   );

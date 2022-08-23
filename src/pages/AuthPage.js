@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { authWallpaper } from "../utils/links.constant";
 import LOGO from "../assets/files/mv_logo.svg";
 import Auth from "../features/auth";
+import { useNavigate } from "react-router-dom";
 
-function AuthPage() {
+function AuthPage({ setLoggedIn }) {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (localStorage.getItem("auth-token")) {
+      navigate("/app/dashboard");
+      setLoggedIn(true);
+    }
+  }, []);
+
   return (
     <div className="mv-auth-layout">
       <div className="mv-auth-left">

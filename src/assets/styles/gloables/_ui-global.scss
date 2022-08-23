@@ -23,6 +23,16 @@
     background-color: rgba(63, 70, 96, 0.2);
 }
 
+.ant-btn-link {
+    color: $primary;
+    opacity: 1;
+
+    &:hover {
+        color: $primary;
+        opacity: 0.8;
+    }
+}
+
 .ant-divider {
     border-color: rgba(207, 209, 222, 0.4);
 }
@@ -34,4 +44,30 @@
         border: 2px solid $primary;
         background-color: rgba(63, 70, 96, 0.1);
     }
+}
+
+
+.mv-unselected-icon {
+    height: 20px;
+    width: 20px;
+    min-width: 20px;
+    border: 1px solid rgba(207, 209, 222, 0.4);
+    border-radius: 50%;
+}
+
+.ant-dropdown-menu {
+    background: $secondary;
+    border: 1px solid rgba(207, 209, 222, 0.4);
+    border-radius: 10px;
+    padding: 4px ;
+}
+
+.ant-dropdown-menu-item.ant-dropdown-menu-item-active,
+.ant-dropdown-menu-item.ant-dropdown-menu-submenu-title-active,
+.ant-dropdown-menu-item:hover,
+.ant-dropdown-menu-submenu-title.ant-dropdown-menu-item-active,
+.ant-dropdown-menu-submenu-title.ant-dropdown-menu-submenu-title-active,
+.ant-dropdown-menu-submenu-title:hover {
+    background-color: rgba(207, 209, 222, 0.4);
+    border-radius: 10px;
 }

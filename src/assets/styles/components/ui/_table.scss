@@ -94,3 +94,9 @@
 .ant-table tfoot>tr>th {
     padding: 8px 16px;
 }
+
+.ant-table-tbody>tr>td {
+    .ant-avatar {
+        min-width: 32px;
+    }
+}

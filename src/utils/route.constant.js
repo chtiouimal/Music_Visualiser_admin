@@ -3,6 +3,7 @@ import {
   DashboardPage,
   PreviewPage,
   SettingsPage,
+  SingleCollectionPage,
   SongsPage,
 } from "../pages";
 import {
@@ -60,6 +61,12 @@ export const mainNav = [
     key: "5",
     icon: <SettingOutlined />,
   },
+  {
+    id: 8,
+    path: "collections/:id",
+    element: <SingleCollectionPage />,
+    key: "3-1",
+  },
 ];
 
 export const optionNav = [
@@ -78,7 +85,14 @@ export const optionNav = [
         path: "dashboard",
         element: <DashboardPage />,
         routes: [],
-        label: <Link to="dashboard">Dashboard</Link>,
+        label: (
+          <Link
+            to="dashboard"
+            onClick={() => localStorage.setItem("selected-nav", "1")}
+          >
+            Dashboard
+          </Link>
+        ),
         key: "1",
         icon: <PieChartOutlined />,
       },
@@ -87,7 +101,14 @@ export const optionNav = [
         path: "songs",
         element: <SongsPage />,
         routes: [],
-        label: <Link to="songs">Songs</Link>,
+        label: (
+          <Link
+            to="songs"
+            onClick={() => localStorage.setItem("selected-nav", "2")}
+          >
+            Songs
+          </Link>
+        ),
         key: "2",
         icon: <CustomerServiceOutlined />,
       },
@@ -95,8 +116,22 @@ export const optionNav = [
         id: 4,
         path: "collections",
         element: <CollectionsPage />,
-        routes: [":id"],
-        label: <Link to="collections">Collections</Link>,
+        routes: [
+          {
+            id: 8,
+            path: ":id",
+            element: <SingleCollectionPage />,
+            key: "3-1",
+          },
+        ],
+        label: (
+          <Link
+            to="collections"
+            onClick={() => localStorage.setItem("selected-nav", "3")}
+          >
+            Collections
+          </Link>
+        ),
         key: "3",
         icon: <ApartmentOutlined />,
       },
@@ -117,7 +152,14 @@ export const optionNav = [
         path: "preview",
         element: <PreviewPage />,
         routes: [],
-        label: <Link to="preview">Preview</Link>,
+        label: (
+          <Link
+            to="preview"
+            onClick={() => localStorage.setItem("selected-nav", "4")}
+          >
+            Preview
+          </Link>
+        ),
         key: "4",
         icon: <EyeOutlined />,
       },
@@ -126,7 +168,14 @@ export const optionNav = [
         path: "settings",
         element: <SettingsPage />,
         routes: [],
-        label: <Link to="settings">Settings</Link>,
+        label: (
+          <Link
+            to="settings"
+            onClick={() => localStorage.setItem("selected-nav", "5")}
+          >
+            Settings
+          </Link>
+        ),
         key: "5",
         icon: <SettingOutlined />,
       },

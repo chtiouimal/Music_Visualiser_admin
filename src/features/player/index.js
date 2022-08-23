@@ -1,16 +1,25 @@
 import { Divider, Space } from "antd";
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { PlayerContext } from "../../context/PlayerContext";
 import { musicList } from "../../utils/static.constants";
 import MusicControls from "./components/MusicControls";
 import MusicLibrary from "./components/MusicLibrary";
 import MusicPlayer from "./components/MusicPlayer";
 
 function MvPlayer({ data }) {
-  const dataList = musicList.map((e) => {
-    return { ...e, active: false };
-  });
-  const [music, setMusic] = useState(dataList);
-  const [currentmusic, setCurrentmusic] = useState(music[0]);
+  const { dataContext, setDataContext } = useContext(PlayerContext);
+
+  // const dataList = data.map((e) => {
+  //   return { ...e, active: false };
+  // });
+
+  useEffect(() => {
+    setMusic(dataContext);
+    setCurrentmusic(dataContext[0]);
+  }, [dataContext]);
+
+  const [music, setMusic] = useState(dataContext);
+  const [currentmusic, setCurrentmusic] = useState(dataContext[0]);
   const [isplaying, setIsplaying] = useState(false);
   const [librarystatus, setLibrarystatus] = useState(true);
 
@@ -26,7 +35,7 @@ function MvPlayer({ data }) {
         music={music}
         setMusic={setMusic}
       />
-      <Divider />
+      <Divider style={{ borderColor: "transparent" }} />
       <MusicLibrary
         librarystatus={librarystatus}
         music={music}

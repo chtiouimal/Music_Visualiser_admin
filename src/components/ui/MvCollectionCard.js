@@ -1,17 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function MvCollectionCard({ ele }) {
-  const coll = ["1", "2", "3", "4"];
-
   return (
-    <div className="mv-collection-card">
+    <Link to={ele._id} className="mv-collection-card">
       <div className="mv-collection-details">
-        <h4>Collection 1</h4>
+        <h4>{ele.name}</h4>
       </div>
-      {coll.map((coll) => (
-        <img src={ele} key={coll} />
+      {ele.songs.map((song, i) => (
+        <img src={song.coverArt} key={i} />
       ))}
-    </div>
+    </Link>
   );
 }
 
